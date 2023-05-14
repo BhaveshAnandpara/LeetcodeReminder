@@ -2,9 +2,7 @@ import { LeetCode } from "leetcode-query";
 
 export default async function handler(req, res) {
 
-
         //if GET method throws error
-
         if( req.method === "GET" ){
 
             try{
@@ -22,7 +20,12 @@ export default async function handler(req, res) {
         //Finds the user and return the user information
         if( req.method === "POST" ){
 
+            console.log("Nice");
+
             try {
+
+                console.log(req.body.username);
+
                 const leetcode = new LeetCode();
                 const user = await leetcode.user(req.body.username);
 
